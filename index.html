@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volkswagen Passat Sel 2013</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        background-color: #f2f2f2;
+        flex-direction: column;
+      }
+
+      .carousel-container {
+        position: relative;
+        width: 80%;
+        max-width: 800px;
+        max-height: 600px;
+        overflow: hidden;
+        background: #f2f2f2;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        /* margin-top: 20px; */
+      }
+
+      /* .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .carousel-item {
+        min-width: 100%;
+        min-height: 100%;
+      }
+
+      .carousel-item img {
+        width: 100%;
+        min-height: 100%;
+        display: block;
+      } */
+
+      .carousel-inner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+
+      .carousel-item {
+        flex: 0 0 100%;
+        height: 100%;
+      }
+
+      .carousel-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.5em;
+        z-index: 10;
+      }
+
+      .button.left {
+        left: 10px;
+      }
+
+      .button.right {
+        right: 10px;
+      }
+
+      .button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .location-buttons {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .location-buttons button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #000;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .location-buttons button:hover {
+        background-color: #444;
+      }
+
+      @media (max-width: 600px) {
+        .location-buttons {
+          gap: 5px; 
+        }
+
+        .location-buttons button {
+          flex: 1 1 45%; 
+          max-width: 45%;
+        }
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+      }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+      }
+      .timeline {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px 0;
+        width: 80%;
+        gap: 10px;
+      }
+      @media (max-width: 600px) {
+        .timeline {
+          gap: 5px; 
+        }
+
+        .timeline div {
+          flex: 1 1 45%; 
+          max-width: 45%;
+        }
+      }
+      .timeline div {
+        text-align: center;
+        font-size: 14px;
+        color: #555;
+      }
+      .timeline .circle {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        background-color: #333;
+        border-radius: 50%;
+        margin-top: 8px;
+      }
+      .car-title {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        margin: 20px;
+      }
+      .car-info {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+      }
+      .car-info .details,
+      .car-info .gallery {
+        width: 50%;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .details-item {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0;
+        font-size: 14px;
+      }
+      .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      .gallery .thumbnails {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .thumbnails img {
+        width: 70px;
+        height: 70px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .details-section {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      .details-section .box {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-size: 12px;
+        color: #333;
+      }
+      .box-icon {
+        font-size: 20px;
+        color: #555;
+        margin-bottom: 5px;
+      }
+      .carousel-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .carousel-images {
+        width: 100%;
+        min-height: 100%;
+        display: flex;
+        flex-direction: row;
+        transition: transform 0.5s ease;
+      }
+
+      .carousel-images img {
+        width: 100%;
+        min-height: 100%;
+        border-radius: 8px;
+        object-fit: contain;
+      }
+
+      .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        font-size: 18px;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+
+      .carousel-button.left {
+        left: 10px;
+      }
+
+      .carousel-button.right {
+        right: 10px;
+      }
+      .category-selector {
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .category-selector button {
+        margin: 0 10px;
+        padding: 8px 16px;
+        font-size: 14px;
+        border: none;
+        background-color: #333;
+        color: white;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .category-selector button:hover {
+        background-color: #555;
+      }
+      .nazva {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        background-color: #333;
+        color: white;
+        height: 50px;
+        width: 100%;
+      }
+      .header {
+        display: flex;
+        margin-top: 20%;
+        background-color: #000000;
+      }
+      @media (max-width: 768px) {
+        .car-title {
+          margin: 20px;
+        }
+        .timeline {
+          flex-direction: column;
+          margin: auto;
+          align-items: center;
+        }
+        .category-selector {
+          flex-direction: column;
+          margin: auto;
+          align-items: center;
+        }
+        .car-info {
+          flex-direction: column-reverse;
+        }
+        .car-info .details,
+        .car-info .gallery {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+        .details-section .box {
+          width: 100%;
+          font-size: 14px;
+        }
+        .category-selector button {
+          padding: 10px 20px;
+          font-size: 16px;
+        }
+        .carousel-button {
+          font-size: 22px;
+          padding: 12px;
+        }
+        .car-title {
+          font-size: 20px;
+        }
+        .category-selector {
+          display: flex;
+          align-items: center;
+          text-align: center;
+          flex-direction: column;
+        }
+        .category-selector button {
+          margin: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nazva">
+      <h1>Urban Auto</h1>
+    </div>
+    <div class="timeline">
+      <div>
+        <div class="circle"></div>
+        Auction<br />26.11.2024
+      </div>
+      <div>
+        <div class="circle"></div>
+        Picked Up<br />01.12.2024
+      </div>
+      <div>
+        <div class="circle"></div>
+        Warehouse<br />03.12.2024
+      </div>
+      <div>
+        <div class="circle"></div>
+        Loaded<br />Waiting
+      </div>
+      <div>
+        <div class="circle"></div>
+        In Transit<br />00.00.2024
+      </div>
+      <div>
+        <div class="circle"></div>
+        Unloaded<br />00.00.2024
+      </div>
+    </div>
+
+    <!-- Title -->
+    <div class="car-title">Volkswagen Passat Sel 2013</div>
+    <div class="location-buttons">
+      <button onclick="changeLocation('auction')">Auction</button>
+      <button onclick="changeLocation('picked_up')">Picked Up</button>
+      <button onclick="changeLocation('warehouse')">Warehouse</button>
+      <button onclick="changeLocation('port')">Port</button>
+    </div>
+
+    <!-- Car Info -->
+    <div class="car-info">
+      <div class="details">
+        <h1>Auction</h1>
+        <div class="details-item">
+          <span>VIN:</span>
+          <span>5YJYGAEE4MF285995</span>
+        </div>
+        <div class="details-item">
+          <span>Lot ID:</span>
+          <span>39946223</span>
+        </div>
+        <div class="details-item">
+          <span>Keys:</span>
+          <span>YES</span>
+        </div>
+        <div class="details-item">
+          <span>Documents:</span>
+          <span>YES</span>
+        </div>
+        <div class="details-item">
+          <span>Purchase Date:</span>
+          <span>26.11.2024</span>
+        </div>
+        <div class="details-item">
+          <span>Warehouse Delivery:</span>
+          <span>03.12.2024</span>
+        </div>
+        <div class="details-item">
+          <span>Container:</span>
+          <span>MSDU8316910</span>
+        </div>
+        <div class="details-item">
+          <span>Port of Loading:</span>
+          <span>Houston TX</span>
+        </div>
+        <div class="details-item">
+          <span>Port of Discharge:</span>
+          <span>Klaipeda</span>
+        </div>
+        <div class="details-item">
+          <span>ETA:</span>
+          <span>00.00.2024</span>
+        </div>
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel-inner" id="carousel-inner"></div>
+        <button class="button left" id="prev">&#8249;</button>
+        <button class="button right" id="next">&#8250;</button>
+      </div>
+    </div>
+    <div class="details-section">
+      <div class="box">
+        <div class="box-icon">📄</div>
+        <div>Documents: FL - CERT OF TITLE SLVG REBUILDABLE</div>
+      </div>
+      <div class="box">
+        <div class="box-icon">📏</div>
+        <div>Odometer: 65,040mi (Actual)</div>
+      </div>
+      <div class="box">
+        <div class="box-icon">🔑</div>
+        <div>Keys Auction: Yes</div>
+      </div>
+      <div class="box">
+        <div class="box-icon">⚙️</div>
+        <div>Engine: 2.5</div>
+      </div>
+      <div class="box">
+        <div class="box-icon">⛽</div>
+        <div>Fuel: Gas</div>
+      </div>
+      <div class="box">
+        <div class="box-icon">🔧</div>
+        <div>Damage: Back End</div>
+      </div>
+    </div>
+
+    <script>
+      const carouselInner = document.getElementById("carousel-inner");
+      const prevButton = document.getElementById("prev");
+      const nextButton = document.getElementById("next");
+
+      const images = {
+        auction: [
+          "./Auction/1.jpg",
+          "./Auction/2.jpg",
+          "./Auction/3.jpg",
+          "./Auction/4.jpg",
+          "./Auction/5.jpg",
+          "./Auction/6.jpg",
+          "./Auction/7.jpg",
+          "./Auction/8.jpg",
+          "./Auction/9.jpg",
+          "./Auction/10.jpg",
+          "./Auction/11.jpg",
+          "./Auction/12.jpg",
+        ],
+        picked_up: [
+          "./Picked Up/1.jpg",
+          "./Picked Up/2.jpg",
+          "./Picked Up/3.jpg",
+          "./Picked Up/4.jpg",
+          "./Picked Up/5.jpg",
+        ],
+        warehouse: [
+          "./Warehouse/1.jpg",
+          "./Warehouse/2.jpg",
+          "./Warehouse/3.jpg",
+          "./Warehouse/4.jpg",
+          "./Warehouse/5.jpg",
+          "./Warehouse/6.jpg",
+          "./Warehouse/7.jpg",
+          "./Warehouse/8.jpg",
+          "./Warehouse/9.jpg",
+          "./Warehouse/10.jpg",
+          "./Warehouse/11.jpg",
+          "./Warehouse/12.jpg",
+          "./Warehouse/13.jpg",
+          "./Warehouse/14.jpg",
+          "./Warehouse/15.jpg",
+          "./Warehouse/16.jpg",
+          "./Warehouse/17.jpg",
+          "./Warehouse/18.jpg",
+          "./Warehouse/19.jpg",
+          "./Warehouse/20.jpg",
+          "./Warehouse/21.jpg",
+          "./Warehouse/22.jpg",
+          "./Warehouse/23.jpg",
+          "./Warehouse/24.jpg",
+          "./Warehouse/25.jpg",
+          "./Warehouse/26.jpg",
+          "./Warehouse/27.jpg",
+          "./Warehouse/28.jpg",
+          "./Warehouse/29.jpg",
+          "./Warehouse/30.jpg",
+        ],
+        port: ["./Port/No_image_available.svg (1).png"],
+      };
+
+      let currentIndex = 0;
+      let currentImages = images.auction;
+
+      function updateCarousel() {
+        carouselInner.innerHTML = "";
+        currentImages.forEach((src) => {
+          const div = document.createElement("div");
+          div.className = "carousel-item";
+          const img = document.createElement("img");
+          img.src = src;
+          div.appendChild(img);
+          carouselInner.appendChild(div);
+        });
+        updateSlide();
+      }
+
+      function updateSlide() {
+        const offset = -currentIndex * 100;
+        carouselInner.style.transform = `translateX(${offset}%)`;
+      }
+
+      nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % currentImages.length;
+        updateSlide();
+      });
+
+      prevButton.addEventListener("click", () => {
+        currentIndex =
+          (currentIndex - 1 + currentImages.length) % currentImages.length;
+        updateSlide();
+      });
+
+      function changeLocation(location) {
+        currentImages = images[location];
+        currentIndex = 0;
+        updateCarousel();
+      }
+
+      // Initialize the carousel
+      updateCarousel();
+    </script>
+  </body>
+</html>
